@@ -1,4 +1,4 @@
-// DATA MOCKUP REAL-TIME (Desember 2025)
+// 1. DATA MOCKUP REAL-TIME (Desember 2025)
 const disasters = [
   {
     lat: 5.0135,
@@ -50,7 +50,7 @@ const disasters = [
   },
 ];
 
-// INIT MAP (Dark Mode CartoDB)
+// 2. INIT MAP (Dark Mode CartoDB)
 var map = L.map("map", {
   center: [-2.5, 118],
   zoom: 5,
@@ -65,7 +65,7 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
   maxZoom: 19,
 }).addTo(map);
 
-// Custom Icon Generator
+// 3. Custom Icon Generator
 const createIcon = (color) => {
   return L.divIcon({
     className: "custom-marker",
@@ -90,7 +90,7 @@ const createIcon = (color) => {
   });
 };
 
-// Render Data
+// 4. Render Data Marker
 disasters.forEach((d) => {
   let color = "#0ea5e9"; // Default Blue
   if (d.type === "erupsi") color = "#ef4444"; // Red
@@ -123,7 +123,7 @@ disasters.forEach((d) => {
   marker.bindPopup(popupContent);
 });
 
-// Inject Animation Style
+// 5. Inject Animation Style (Pulse Effect)
 const style = document.createElement("style");
 style.innerHTML = `
     @keyframes pulse {
@@ -133,27 +133,36 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-// Animasi Bar Chart di Statistik
+// 6. Animasi Bar Chart di Statistik (BAGIAN YANG TADINYA ERROR)
 setTimeout(() => {
   document.querySelectorAll(".bar").forEach((bar) => {
     setInterval(() => {
       const h = Math.floor(Math.random() * 80) + 20;
       bar.style.height = h + "%";
+    }, 1000 + Math.random() * 1000); // Random speed per bar
   });
 }, 1000);
 
+// 7. Fungsi Load Video (Wajib ada di paling bawah)
 function loadVideo(element) {
-    const id = element.getAttribute('data-video-id');
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('src', `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`);
-    iframe.setAttribute('width', '100%');
-    iframe.setAttribute('height', '100%');
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('allow', 'autoplay; encrypted-media');
-    iframe.style.position = 'absolute';
-    iframe.style.top = '0';
-    iframe.style.left = '0';
-    
-    element.innerHTML = "";
-    element.appendChild(iframe);
+  const id = element.getAttribute("data-video-id");
+  const iframe = document.createElement("iframe");
+
+  // URL Embed YouTube dengan Autoplay
+  iframe.setAttribute(
+    "src",
+    `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`
+  );
+
+  iframe.setAttribute("width", "100%");
+  iframe.setAttribute("height", "100%");
+  iframe.setAttribute("frameborder", "0");
+  iframe.setAttribute("allow", "autoplay; encrypted-media");
+  iframe.style.position = "absolute";
+  iframe.style.top = "0";
+  iframe.style.left = "0";
+
+  // Bersihkan gambar thumbnail, masukkan video
+  element.innerHTML = "";
+  element.appendChild(iframe);
 }
