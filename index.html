@@ -62,7 +62,7 @@
         <div class="stat-card alert-level">
           <h3>STATUS NASIONAL</h3>
           <h2 class="text-warning">SIAGA (Level 3)</h2>
-          <p>Waspada Hidrometeorologi Basah</p>
+          <p>Darurat Banjir & Erupsi</p>
         </div>
 
         <div class="stat-card mini-stat">
@@ -147,89 +147,94 @@
       <section id="news" class="multimedia-section">
         <div class="section-title">
           <h2>
-            <i class="fas fa-satellite-dish"></i> MEDIA CENTER & LIVE STREAMING
+            <i class="fas fa-play-circle"></i> LIPUTAN VIDEO & BERITA TERKINI
           </h2>
-          <div class="live-badge">24H ON AIR</div>
+          <a
+            href="https://www.youtube.com/results?search_query=berita+bencana+alam+indonesia+terkini"
+            target="_blank"
+            class="view-all"
+          >
+            Lihat Semua <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
 
         <div class="news-container">
-          <div class="tv-panel">
-            <div class="panel-header">
-              <i class="fas fa-tv"></i> SALURAN BERITA NASIONAL (LIVE)
+          <div class="video-grid-pro">
+            <div
+              class="video-card main-video"
+              onclick="loadVideo(this)"
+              data-video-id="JzXjW-4s-0E"
+            >
+              <img
+                src="https://img.youtube.com/vi/JzXjW-4s-0E/maxresdefault.jpg"
+                alt="Thumbnail Headline"
+                class="video-thumb"
+              />
+              <div class="play-overlay"><i class="fas fa-play"></i></div>
+              <div class="video-badge red">LIVE REPORT</div>
+              <div class="video-title-overlay">
+                TV One: Kabar Bencana Terkini & Breaking News
+              </div>
             </div>
-            <div class="channel-grid">
-              <a
-                href="https://www.youtube.com/@KompasTV/live"
-                target="_blank"
-                class="channel-btn kompas"
-              >
-                <div class="ch-icon"><i class="fas fa-play"></i></div>
-                <div class="ch-info">
-                  <strong>KOMPAS TV</strong>
-                  <small>Independent & Terpercaya</small>
-                </div>
-              </a>
 
-              <a
-                href="https://www.youtube.com/@tvOneNews/live"
-                target="_blank"
-                class="channel-btn tvone"
+            <div
+              class="video-card sub-video"
+              onclick="loadVideo(this)"
+              data-video-id="xyI29Jk85k4"
+            >
+              <img
+                src="https://img.youtube.com/vi/xyI29Jk85k4/hqdefault.jpg"
+                alt="Thumbnail Banjir"
+                class="video-thumb"
+              />
+              <div class="play-overlay small"><i class="fas fa-play"></i></div>
+              <div class="video-badge blue">Laporan Warga</div>
+              <div
+                class="video-title-overlay"
+                style="font-size: 10px; padding: 5px"
               >
-                <div class="ch-icon"><i class="fas fa-bolt"></i></div>
-                <div class="ch-info">
-                  <strong>TV ONE</strong>
-                  <small>Memang Beda</small>
-                </div>
-              </a>
-
-              <a
-                href="https://www.cnnindonesia.com/tv"
-                target="_blank"
-                class="channel-btn cnn"
-              >
-                <div class="ch-icon"><i class="fas fa-globe"></i></div>
-                <div class="ch-info">
-                  <strong>CNN INDONESIA</strong>
-                  <small>News We Can Trust</small>
-                </div>
-              </a>
-
-              <a
-                href="https://www.metrotvnews.com/live"
-                target="_blank"
-                class="channel-btn metro"
-              >
-                <div class="ch-icon"><i class="fas fa-circle-notch"></i></div>
-                <div class="ch-info">
-                  <strong>METRO TV</strong>
-                  <small>Knowledge to Elevate</small>
-                </div>
-              </a>
+                Visual Banjir
+              </div>
             </div>
-            <div class="panel-footer">
-              <p>
-                <i class="fas fa-info-circle"></i> Klik saluran di atas untuk
-                memantau siaran langsung penanganan bencana.
-              </p>
+
+            <div
+              class="video-card sub-video"
+              onclick="loadVideo(this)"
+              data-video-id="N1y18g5h8gU"
+            >
+              <img
+                src="https://img.youtube.com/vi/N1y18g5h8gU/hqdefault.jpg"
+                alt="Thumbnail Drone"
+                class="video-thumb"
+              />
+              <div class="play-overlay small"><i class="fas fa-play"></i></div>
+              <div class="video-badge orange">Pantauan Udara</div>
+              <div
+                class="video-title-overlay"
+                style="font-size: 10px; padding: 5px"
+              >
+                Kondisi Terkini
+              </div>
             </div>
           </div>
 
-          <div class="news-list">
+          <div class="news-list-pro">
             <a
-              href="https://www.detik.com/tag/bencana-alam"
+              href="https://www.detik.com/tag/banjir"
               target="_blank"
-              class="news-item"
+              class="news-item-pro"
             >
               <img
-                src="https://akcdn.detik.net.id/community/media/visual/2023/12/26/banjir-kerinci_169.jpeg?w=700&q=90"
+                src="https://images.unsplash.com/photo-1543854589-4f940875e53e?q=80&w=300&auto=format&fit=crop"
                 alt="Banjir"
               />
-              <div class="news-text">
-                <span class="cat cat-blue">MONITORING</span>
-                <h5>DetikNews: Tag Bencana Alam</h5>
+              <div class="news-content">
+                <span class="source"
+                  ><i class="far fa-newspaper"></i> DETIK NEWS</span
+                >
+                <h4>Update Banjir Indonesia</h4>
                 <p>
-                  Indeks berita terbaru kejadian bencana di seluruh Indonesia
-                  hari ini.
+                  Pantauan terkini titik banjir di Sumatera & Jawa hari ini.
                 </p>
               </div>
             </a>
@@ -237,35 +242,38 @@
             <a
               href="https://magma.esdm.go.id/"
               target="_blank"
-              class="news-item"
+              class="news-item-pro"
             >
               <img
-                src="https://magma.esdm.go.id/assets/images/magma-logo.png"
-                style="background: black; object-fit: contain"
-                alt="Magma"
+                src="https://images.unsplash.com/photo-1469532890407-4a6c6c74fb56?q=80&w=300&auto=format&fit=crop"
+                alt="Gunung"
               />
-              <div class="news-text">
-                <span class="cat cat-red">DATA ESDM</span>
-                <h5>MAGMA Indonesia</h5>
+              <div class="news-content">
+                <span class="source alert"
+                  ><i class="fas fa-mountain"></i> MAGMA ESDM</span
+                >
+                <h4>Status Gunung Api</h4>
                 <p>
-                  Informasi resmi aktivitas gunung api, gempa bumi, dan gerakan
-                  tanah.
+                  Laporan resmi aktivitas vulkanik Level II-IV (Awas/Siaga).
                 </p>
               </div>
             </a>
 
-            <a href="https://www.bmkg.go.id/" target="_blank" class="news-item">
+            <a
+              href="https://www.bmkg.go.id/"
+              target="_blank"
+              class="news-item-pro"
+            >
               <img
-                src="https://cdn.antaranews.com/cache/1200x800/2021/04/05/kantor-bmkg-kemayoran.jpg"
-                alt="BMKG"
+                src="https://images.unsplash.com/photo-1564344487-1904a434c442?q=80&w=300&auto=format&fit=crop"
+                alt="Cuaca"
               />
-              <div class="news-text">
-                <span class="cat cat-orange">CUACA</span>
-                <h5>BMKG: Peringatan Dini</h5>
-                <p>
-                  Monitoring potensi cuaca ekstrem, gelombang tinggi, dan
-                  tsunami.
-                </p>
+              <div class="news-content">
+                <span class="source info"
+                  ><i class="fas fa-cloud-bolt"></i> INFO BMKG</span
+                >
+                <h4>Peringatan Cuaca Ekstrem</h4>
+                <p>Potensi hujan lebat, angin kencang, dan gelombang tinggi.</p>
               </div>
             </a>
           </div>
