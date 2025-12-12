@@ -487,3 +487,137 @@ footer {
     font-size: 18px;
   }
 }
+/* --- STYLE  UNTUK PANEL TV --- */
+.tv-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  font-weight: bold;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+}
+
+.channel-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Kolom */
+  gap: 15px;
+}
+
+.channel-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border);
+  padding: 15px;
+  text-decoration: none;
+  color: var(--text-main);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect  */
+.channel-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.ch-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.ch-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ch-info strong {
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.ch-info small {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Warna Spesifik per Channel saat Hover */
+.channel-btn.kompas:hover {
+  border-color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
+}
+.channel-btn.kompas:hover .ch-icon {
+  color: #f97316;
+}
+
+.channel-btn.tvone:hover {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+.channel-btn.tvone:hover .ch-icon {
+  color: #ef4444;
+}
+
+.channel-btn.cnn:hover {
+  border-color: #ef4444;
+  background: rgba(200, 0, 0, 0.1);
+}
+.channel-btn.cnn:hover .ch-icon {
+  color: white;
+}
+
+.channel-btn.metro:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+}
+.channel-btn.metro:hover .ch-icon {
+  color: #3b82f6;
+}
+
+.panel-footer {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.live-badge {
+  background: var(--danger);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  animation: blink 2s infinite;
+}
+
+/* Responsive di HP jadi 1 kolom biar tombolnya gede */
+@media (max-width: 600px) {
+  .channel-grid {
+    grid-template-columns: 1fr;
+  }
+}
