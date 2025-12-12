@@ -621,3 +621,212 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Container Utama */
+.news-container {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr; /* Pembagian Layar: Kiri Video, Kanan Berita */
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* --- VIDEO GRID SYSTEM (Kotak-kotak Video) --- */
+.video-grid-pro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 140px; /* Tinggi Baris 1 & 2 */
+  gap: 15px;
+}
+
+/* Video Utama (Besar) memenuhi 2 kolom */
+.main-video {
+  grid-column: 1 / 3;
+  position: relative;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Video Kecil */
+.sub-video {
+  position: relative;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, border-color 0.3s;
+  height: 100%;
+}
+
+/* Efek Hover Keren */
+.main-video:hover,
+.sub-video:hover {
+  transform: scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Gambar Thumbnail */
+.video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Agar gambar ful */
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.main-video:hover .video-thumb,
+.sub-video:hover .video-thumb {
+  opacity: 0.4; /* Gelapkan gambar saat hover */
+}
+
+/* Tombol Play di Tengah */
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(14, 165, 233, 0.9); /* Biru Transparan */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
+  transition: transform 0.3s;
+  z-index: 5;
+}
+
+.play-overlay.small {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.main-video:hover .play-overlay,
+.sub-video:hover .play-overlay {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #fff;
+  color: var(--accent);
+}
+
+/* Badge & Judul Video */
+.video-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  z-index: 6;
+  text-transform: uppercase;
+}
+.video-badge.red {
+  background: var(--danger);
+}
+.video-badge.blue {
+  background: var(--accent);
+}
+.video-badge.orange {
+  background: var(--warning);
+}
+
+.video-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, #000, transparent);
+  color: white;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  z-index: 6;
+}
+
+/* --- LIST BERITA DI KANAN --- */
+.news-list-pro {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.news-item-pro {
+  display: flex;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 100px; /* Tinggi tetap agar rapi */
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.news-item-pro:hover {
+  transform: translateX(5px);
+  border-color: var(--accent);
+}
+
+.news-item-pro img {
+  width: 120px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.source {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.source.alert {
+  color: var(--danger);
+}
+.source.info {
+  color: var(--warning);
+}
+
+.news-content h4 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: var(--text-main);
+  font-family: "Oswald", sans-serif;
+}
+
+.news-content p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Responsive HP */
+@media (max-width: 768px) {
+  .news-container {
+    grid-template-columns: 1fr;
+  }
+  .video-grid-pro {
+    grid-template-rows: 220px 130px;
+  }
+}

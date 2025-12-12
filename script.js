@@ -139,8 +139,21 @@ setTimeout(() => {
     setInterval(() => {
       const h = Math.floor(Math.random() * 80) + 20;
       bar.style.height = h + "%";
-    }, 800 + Math.random() * 1000);
   });
 }, 1000);
 
-
+function loadVideo(element) {
+    const id = element.getAttribute('data-video-id');
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('src', `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`);
+    iframe.setAttribute('width', '100%');
+    iframe.setAttribute('height', '100%');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'autoplay; encrypted-media');
+    iframe.style.position = 'absolute';
+    iframe.style.top = '0';
+    iframe.style.left = '0';
+    
+    element.innerHTML = "";
+    element.appendChild(iframe);
+}
