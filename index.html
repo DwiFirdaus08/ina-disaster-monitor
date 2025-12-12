@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INA-DisasterMonitor | Sistem Informasi Geografis</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-satellite-dish"></i></div>
+        <div class="logo-text">
+          INA-DisasterMonitor
+          <small>SISTEM INFORMASI GEOGRAFIS KEBENCANAAN</small>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#dashboard" class="active"
+          ><i class="fas fa-chart-line"></i> Dashboard</a
+        >
+        <a href="#peta"><i class="fas fa-map-marked-alt"></i> Peta Live</a>
+        <a href="#news"><i class="fas fa-video"></i> Media Center</a>
+      </div>
+
+      <div class="live-indicator">
+        <span class="blink">●</span> REALTIME DATA
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <section id="dashboard" class="stats-grid">
+        <div class="stat-card prime">
+          <div class="stat-icon"><i class="fas fa-globe-asia"></i></div>
+          <div class="stat-info">
+            <h3>67</h3>
+            <p>Total Laporan Masuk</p>
+          </div>
+          <div class="stat-chart">
+            <div class="bar" style="height: 40%"></div>
+            <div class="bar" style="height: 70%"></div>
+            <div class="bar" style="height: 50%"></div>
+            <div class="bar" style="height: 90%"></div>
+          </div>
+        </div>
+
+        <div class="stat-card alert-level">
+          <h3>STATUS NASIONAL</h3>
+          <h2 class="text-warning">SIAGA (Level 3)</h2>
+          <p>Waspada Hidrometeorologi Basah</p>
+        </div>
+
+        <div class="stat-card mini-stat">
+          <i class="fas fa-water text-blue"></i>
+          <div>
+            <h4>12</h4>
+            <span>Banjir</span>
+          </div>
+        </div>
+        <div class="stat-card mini-stat">
+          <i class="fas fa-house-crack text-orange"></i>
+          <div>
+            <h4>15</h4>
+            <span>Longsor</span>
+          </div>
+        </div>
+        <div class="stat-card mini-stat">
+          <i class="fas fa-fire text-red"></i>
+          <div>
+            <h4>8</h4>
+            <span>Erupsi</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-split" id="peta">
+        <div class="map-wrapper">
+          <div class="map-header">
+            <h4><i class="fas fa-crosshairs"></i> PEMETAAN SEBARAN BENCANA</h4>
+            <div class="badges">
+              <span class="badge bg-red">Live Update</span>
+              <span class="badge bg-dark">Satellite</span>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-box">
+            <div class="box-header">
+              <i class="fas fa-bell"></i> PERINGATAN DINI
+            </div>
+            <ul class="alert-list">
+              <li class="high-priority">
+                <strong
+                  ><i class="fas fa-exclamation-circle"></i> Banjir Aceh
+                  Utara</strong
+                >
+                <p>Status: Tanggap Darurat. Evakuasi warga di 3 kecamatan.</p>
+              </li>
+              <li>
+                <strong
+                  ><i class="fas fa-triangle-exclamation"></i> Gn.
+                  Lewotobi</strong
+                >
+                <p>Erupsi terekam di seismograf. Zona bahaya 7km.</p>
+              </li>
+              <li>
+                <strong
+                  ><i class="fas fa-cloud-showers-heavy"></i> Pesisir
+                  Semarang</strong
+                >
+                <p>Potensi banjir rob akibat pasang air laut maksimum.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box contacts">
+            <div class="box-header">
+              <i class="fas fa-phone-volume"></i> KONTAK DARURAT
+            </div>
+            <div class="contact-grid">
+              <button onclick="window.location.href='tel:117'">BNPB 117</button>
+              <button onclick="window.location.href='tel:115'">
+                BASARNAS 115
+              </button>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="news" class="multimedia-section">
+        <div class="section-title">
+          <h2><i class="fas fa-rss"></i> PANTAUAN MEDIA TERKINI</h2>
+          <a href="https://bnpb.go.id" target="_blank" class="view-all"
+            >Portal Resmi BNPB <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="news-container">
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/videoseries?list=PL7kYQ-i6lJ2ys3iYVjPKAwXFuvPfbzJgB"
+                title="Berita Bencana Terkini"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-info">
+              <span class="live-tag">LIPUTAN TV NASIONAL</span>
+              <h4>Kumpulan Video Laporan Bencana Terkini</h4>
+            </div>
+          </div>
+
+          <div class="news-list">
+            <a
+              href="https://www.detik.com/tag/bencana-alam"
+              target="_blank"
+              class="news-item"
+            >
+              <img
+                src="https://akcdn.detik.net.id/community/media/visual/2023/12/26/banjir-kerinci_169.jpeg?w=700&q=90"
+                alt="Banjir"
+              />
+              <div class="news-text">
+                <span class="cat cat-blue">BERITA ONLINE</span>
+                <h5>DetikNews: Tag Bencana Alam</h5>
+                <p>
+                  Indeks berita terbaru kejadian bencana di seluruh Indonesia
+                  hari ini.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://magma.esdm.go.id/"
+              target="_blank"
+              class="news-item"
+            >
+              <img
+                src="https://magma.esdm.go.id/assets/images/magma-logo.png"
+                style="background: black; object-fit: contain"
+                alt="Magma"
+              />
+              <div class="news-text">
+                <span class="cat cat-red">DATA ESDM</span>
+                <h5>MAGMA Indonesia</h5>
+                <p>
+                  Informasi resmi aktivitas gunung api, gempa bumi, dan gerakan
+                  tanah.
+                </p>
+              </div>
+            </a>
+
+            <a href="https://www.bmkg.go.id/" target="_blank" class="news-item">
+              <img
+                src="https://cdn.antaranews.com/cache/1200x800/2021/04/05/kantor-bmkg-kemayoran.jpg"
+                alt="BMKG"
+              />
+              <div class="news-text">
+                <span class="cat cat-orange">CUACA & IKLIM</span>
+                <h5>BMKG: Peringatan Dini Cuaca</h5>
+                <p>
+                  Monitoring potensi cuaca ekstrem, gelombang tinggi, dan
+                  tsunami.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-content">
+          <p>
+            &copy; 2025 <b>INA-DisasterMonitor</b>. Sistem Informasi Geografis.
+          </p>
+          <p class="credits">Dibuat untuk Tugas Kuliah Teknik Informatika.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
